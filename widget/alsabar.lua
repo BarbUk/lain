@@ -129,7 +129,7 @@ local function factory(args)
             end
 
             int = math.modf((alsabar._current_level / 100) * tot)
-            preset.text = string.format("[%s%s]", string.rep("|", int),
+            preset.message = string.format("[%s%s]", string.rep("|", int),
                           string.rep(" ", tot - int))
 
             if alsabar.followtag then preset.screen = awful.screen.focused() end
@@ -140,7 +140,7 @@ local function factory(args)
                     destroy = function() alsabar.notification = nil end
                 }
             else
-                naughty.replace_text(alsabar.notification, preset.title, preset.text)
+                naughty.replace_text(alsabar.notification, preset.title, preset.message)
             end
         end)
     end

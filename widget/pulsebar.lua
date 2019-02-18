@@ -138,7 +138,7 @@ local function factory(args)
             end
 
             int = math.modf((pulsebar._current_level / 100) * tot)
-            preset.text = string.format("[%s%s]", string.rep("|", int),
+            preset.message = string.format("[%s%s]", string.rep("|", int),
                           string.rep(" ", tot - int))
 
             if pulsebar.followtag then preset.screen = awful.screen.focused() end
@@ -149,7 +149,7 @@ local function factory(args)
                     destroy = function() pulsebar.notification = nil end
                 }
             else
-                naughty.replace_text(pulsebar.notification, preset.title, preset.text)
+                naughty.replace_text(pulsebar.notification, preset.title, preset.message)
             end
         end)
     end

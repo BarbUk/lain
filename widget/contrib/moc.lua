@@ -57,7 +57,7 @@ local function factory(args)
                 end
             end
 
-            moc_notification_preset.text = string.format("%s (%s) - %s\n%s", moc_now.artist,
+            moc_notification_preset.message = string.format("%s (%s) - %s\n%s", moc_now.artist,
                                            moc_now.album, moc_now.total, moc_now.title)
             widget = moc.widget
             settings()

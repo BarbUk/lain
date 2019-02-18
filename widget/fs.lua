@@ -127,7 +127,7 @@ local function factory(args)
             end
         end
 
-        fs.notification_preset.text = tconcat(notifytable)
+        fs.notification_preset.message = tconcat(notifytable)
     end
 
     if showpopup == "on" then

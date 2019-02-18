@@ -81,14 +81,14 @@ local function factory(args)
     end
 
     function cal.show(timeout, month, year, scr)
-        cal.notification_preset.text = tconcat(cal.build(month, year))
+        cal.notification_preset.message = tconcat(cal.build(month, year))
 
         if cal.three then
             local current_month, current_year = cal.month, cal.year
             local prev_month, prev_year = cal.getdate(cal.month, cal.year, -1)
             local next_month, next_year = cal.getdate(cal.month, cal.year,  1)
-            cal.notification_preset.text = string.format("%s\n\n%s\n\n%s",
-            tconcat(cal.build(prev_month, prev_year)), cal.notification_preset.text,
+            cal.notification_preset.message = string.format("%s\n\n%s\n\n%s",
+            tconcat(cal.build(prev_month, prev_year)), cal.notification_preset.message,
             tconcat(cal.build(next_month, next_year)))
             cal.month, cal.year = current_month, current_year
         end
