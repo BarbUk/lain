@@ -117,7 +117,7 @@ local function factory(args)
                 naughty.notify {
                     preset = naughty.config.presets.critical,
                     title  = "Warning",
-                    text   = string.format("%s is above %d%% (%d%%)", partition, threshold, fs_now[partition].percentage)
+                    message   = string.format("%s is above %d%% (%d%%)", partition, threshold, fs_now[partition].percentage)
                 }
                 helpers.set_map(partition, true)
             else
@@ -135,7 +135,7 @@ local function factory(args)
             end
         end
 
-        fs.notification_preset.text = tconcat(notifytable)
+        fs.notification_preset.message = tconcat(notifytable)
     end
 
     if showpopup == "on" then

@@ -73,7 +73,7 @@ local function factory(apipath)
         tp_smapi.hide()
         tp_smapi.notification = naughty.notify {
             title   = string.format("%s: %s %s (%s)", batid, mfgr, model, chem),
-            text    = msg,
+            message    = msg,
             timeout = type(seconds) == "number" and seconds or 0,
             screen  = scr or focused()
         }
@@ -100,7 +100,7 @@ local function factory(apipath)
                 naughty.notify {
                     preset = naughty.config.critical,
                     title  = "tp_smapi: error while creating widget",
-                    text   = string.format("battery %s is not installed", battery)
+                    message   = string.format("battery %s is not installed", battery)
                 }
                 all_batteries_installed = false
                 break
